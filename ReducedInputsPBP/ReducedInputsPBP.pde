@@ -9,14 +9,16 @@ Random r;
 
 void setup () {
   size(900, 500);
+  frameRate(50); // Match the 50Hz of sample time.
   
   r = new Random();
   innov = new Innovation();
   vehicle = new Vehicle();
   
-  population = new Population(2, 1, 150, r, innov, vehicle);
+  population = new Population(2, 1, 1000, r, innov, vehicle);
   population.set_only_show_best(true);
   population.runSimulation(r, innov);
+  population.printStats();
 }
 
 void draw () {

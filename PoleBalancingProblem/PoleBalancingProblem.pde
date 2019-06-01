@@ -9,6 +9,7 @@ Random r;
 
 void setup () {
   size(900, 500);
+  frameRate(50);
   
   r = new Random();
   innov = new Innovation();
