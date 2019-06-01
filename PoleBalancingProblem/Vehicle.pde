@@ -60,8 +60,8 @@ class Vehicle extends Behavior {
   }
 
 
-  public float[] updateSensors () {
-    return new float[] {a, adot, x, xdot};
+  public float[][] updateSensors () {
+    return new float[][] {{a, adot, x, xdot}};
   }
 
 
@@ -88,12 +88,10 @@ class Vehicle extends Behavior {
     if (x < -h*100 || x > h*100 || a < -r || a > r) {
       alive = false;
     }
-
-    render();
   }
 
 
-  private void render () {
+  public void render () {
     pushMatrix();
     translate(width/2, height - 100);
 
@@ -123,6 +121,10 @@ class Vehicle extends Behavior {
 
   public Vehicle copy () {
     return new Vehicle();
+  }
+  
+  public Vehicle copyForReplay () {
+    return new Vehicle(); // Not using replay here, so doesn't matter.
   }
 
 

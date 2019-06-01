@@ -15,7 +15,7 @@ void setup () {
   vehicle = new Vehicle();
   
   population = new Population(2, 1, 150, r, innov, vehicle);
-  population.setOnly_show_best(true);
+  population.set_only_show_best(true);
   population.runSimulation(r, innov);
 }
 
